@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+[ $# -eq 0 ] && { echo "Usage: $0 <commit message>"; exit 1; }
+
 echo -e "\033[0;32mPositing new article to GitHub...\033[0m"
 
 # Build the project.
@@ -11,11 +15,10 @@ cd public
 git add .
 
 # Commit changes.
-msg="Update look and feel and titles `date`"
 if [ $# -eq 1 ]
-  then msg="$1"
+  then commit_message="$1"
 fi
-git commit -m "$msg"
+git commit -m "$commit_message"
 
 # Push source and build repos.
 git push origin master
@@ -27,10 +30,9 @@ cd ..
 # blog 저장소 Commit & Push
 git add .
 
-msg="Update look and feel and titles `date`"
 if [ $# -eq 1 ]
-  then msg="$1"
+  then commit_message="$1"
 fi
-git commit -m "$msg"
+git commit -m "$commit_message"
 
 git push origin master
