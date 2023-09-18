@@ -2,7 +2,7 @@ baseurl: https://gomgomshrimp.github.io
 languageCode: ko-kr
 theme: hugo-theme-stack
 paginate: 7
-title: Seowoo's 두뇌 전사장치
+title: Seowoo Thoughts
 
 languages:
 #    en:
